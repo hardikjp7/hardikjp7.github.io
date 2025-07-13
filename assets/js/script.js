@@ -4,6 +4,11 @@
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+const btn = document.querySelector('.info_more-btn');
+
+btn.addEventListener('click', () => {
+  btn.classList.toggle('expanded');
+});
 
 
 
