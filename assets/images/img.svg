@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 80" x="0px" y="0px">
+  <title>End to End Project</title>
+  
+  <!-- Start circle -->
+  <circle cx="15" cy="40" r="8" fill="#FFBC5E"/>
+  
+  <!-- Arrow 1 -->
+  <path d="M25 40 L35 40 M32 37 L35 40 L32 43" fill="none" stroke="#FFBC5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Process box 1 -->
+  <rect x="38" y="30" width="16" height="20" rx="3" fill="#FFBC5E"/>
+  <circle cx="46" cy="40" r="3" fill="white"/>
+  
+  <!-- Arrow 2 -->
+  <path d="M56 40 L66 40 M63 37 L66 40 L63 43" fill="none" stroke="#FFBC5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Process box 2 -->
+  <rect x="69" y="30" width="16" height="20" rx="3" fill="#FFBC5E"/>
+  <rect x="72" y="33" width="10" height="2" fill="white"/>
+  <rect x="72" y="37" width="10" height="2" fill="white"/>
+  <rect x="72" y="41" width="10" height="2" fill="white"/>
+  <rect x="72" y="45" width="10" height="2" fill="white"/>
+  
+  <!-- Arrow 3 -->
+  <path d="M87 40 L97 40 M94 37 L97 40 L94 43" fill="none" stroke="#FFBC5E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- End circle -->
+  <circle cx="105" cy="40" r="8" fill="#FFBC5E"/>
+  
+  <!-- Progress indicator dots -->
+  <circle cx="25" cy="60" r="2" fill="#FFBC5E"/>
+  <circle cx="35" cy="60" r="2" fill="#FFBC5E"/>
+  <circle cx="45" cy="60" r="2" fill="#FFBC5E"/>
+  <circle cx="55" cy="60" r="2" fill="#FFBC5E"/>
+  <circle cx="65" cy="60" r="2" fill="#FFBC5E"/>
+  <circle cx="75" cy="60" r="2" fill="#FFBC5E"/>
+  <circle cx="85" cy="60" r="2" fill="#FFBC5E"/>
+  <circle cx="95" cy="60" r="2" fill="#FFBC5E"/>
+  
+  <!-- Connecting line for progress -->
+  <line x1="25" y1="60" x2="95" y2="60" stroke="#FFBC5E" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Completion checkmark - centered in the circle -->
+  <path d="M102 38 L104 40 L108 36" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
