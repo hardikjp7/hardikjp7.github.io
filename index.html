@@ -1,1189 +1,666 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hardik Parmar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hardik Parmar — AI/ML Engineer | hardikjp7</title>
 
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%237fff6e'/><text y='.9em' font-size='70' x='10' font-family='sans-serif' font-weight='900'>H</text></svg>">
 
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Primary SEO -->
+  <meta name="description" content="Hardik Parmar (hardikjp7) — AI/ML Engineer specializing in intelligent systems, predictive models, and generative AI applications. Explore my projects, skills, and experience."/>
+  <meta name="keywords" content="Hardik Parmar, hardikjp7, AI ML Engineer, Machine Learning, Deep Learning, Generative AI, Python, Portfolio"/>
+  <meta name="author" content="Hardik Parmar"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://hardikjp7.github.io/"/>
 
-  <!--
-    - google font link
-  -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hardik Parmar — AI/ML Engineer | hardikjp7"/>
+  <meta property="og:description" content="Hardik Parmar (hardikjp7) — AI/ML Engineer building intelligent systems, predictive models, and generative AI applications."/>
+  <meta property="og:url" content="https://hardikjp7.github.io/"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Hardik Parmar Portfolio"/>
+  <meta property="og:image" content="https://hardikjp7.github.io/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:alt" content="Hardik Parmar — AI/ML Engineer Portfolio"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Hardik Parmar — AI/ML Engineer | hardikjp7"/>
+  <meta name="twitter:description" content="Hardik Parmar (hardikjp7) — AI/ML Engineer building intelligent systems, predictive models, and generative AI applications."/>
+  <meta name="twitter:image" content="https://hardikjp7.github.io/og-image.png"/>
+  <meta name="twitter:site" content="@hardikjp7"/>
+  <meta name="twitter:creator" content="@hardikjp7"/>
+
+  <!-- JSON-LD Structured Data (hardikjp7 identity signal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hardik Parmar",
+    "alternateName": "hardikjp7",
+    "url": "https://hardikjp7.github.io/",
+    "jobTitle": "AI/ML Engineer",
+    "sameAs": [
+      "https://github.com/hardikjp7"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
 
-  <!--
-    - #MAIN
-  -->
+<div id="scroll-bar"></div>
+<div class="cursor-glow" id="cg"></div>
+<canvas id="pcvs"></canvas>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
 
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/me.png" alt="Hardik Parmar" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Hardik Parmar">Hardik Parmar</h1>
-
-          <p class="title">AI / ML Engineer</p>
+<!-- MODAL -->
+<div class="mbdrop" id="mb">
+  <div class="mbox" id="mbox">
+    <button class="mclose" id="mc">✕</button>
+    <img class="mimg" id="mi" src="" alt=""/>
+    <div class="mbody">
+      <div class="mcat" id="mcat"></div>
+      <div class="mtitle" id="mtitle"></div>
+      <div class="mstats" id="mstats">
+        <div class="mstat stars">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <span id="mstars">—</span> Stars
         </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:hardikjparmar7@gmail.com" class="contact-link">hardikjparmar7@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+918128542910" class="contact-link">+91 8128542910</a>
-            </div>
-
-          </li>
-
-          <!-- <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="30-10">30th October</time>
-            </div>
-
-          </li> -->
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address><b>Pune,</b> Maharashtra</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/hardikjp7/" target="_blank" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://github.com/hardikjp7" target="_blank" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://x.com/hardikjp7" target="_blank" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://leetcode.com/u/Hardikjp7/" target="_blank" class="social-link">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="17" height="17" fill="#D3D3D3">
-                <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.365.497 1.9-.038.535-.536.553-1.387.039-1.901l-2.609-2.636a5.055 5.055 0 0 0-2.445-1.337l2.467-2.503c.516-.514.498-1.366-.037-1.901-.535-.535-1.387-.552-1.902-.038l-10.1 10.101c-.981.982-1.494 2.337-1.494 3.835 0 1.498.513 2.895 1.494 3.875l4.347 4.361c.981.979 2.337 1.452 3.834 1.452s2.853-.512 3.835-1.494l2.609-2.637c.514-.514.496-1.365-.039-1.9s-1.386-.553-1.899-.039zM20.811 13.01H10.666c-.702 0-1.27.604-1.27 1.346s.568 1.346 1.27 1.346h10.145c.701 0 1.27-.604 1.27-1.346s-.569-1.346-1.27-1.346z"/>
-            </svg>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Projects</button>
-          </li>
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li> -->
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I'm Machine Learning enthusiast and 2024 graduate in Electronics and Communication Engineering. 
-            I specialize in building AI solutions, from predictive models to generative applications, to solve real-world problems.
-          </p>
-
-          <p>
-            My focus is on creating impactful and user-friendly AI systems that simplify complex challenges.
-            With a passion for innovation and continuous learning, I aim to deliver solutions that make technology accessible and efficient.
-          </p>
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/image.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Machine Learning Solutions</h4>
-
-                <p class="service-item-text">
-                  Developing and deploying advanced machine learning models to address real-world challenges effectively.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">AI Applications</h4>
-
-                <p class="service-item-text">
-                  Building user-friendly AI-powered applications, including predictive systems and generative AI tools.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Analysis</h4>
-
-                <p class="service-item-text">
-                  Performing data preprocessing, visualization, and analytics to uncover actionable insights.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/roadmap.png" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">End-to-End Projects</h4>
-
-                <p class="service-item-text">
-                  Designing and implementing complete solutions, from model development to deployment, ensuring scalability and efficiency.
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <!-- <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Prof. KN Patel" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Prof. KN Patel</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Hardik led his college project on real-time people counting using Raspberry Pi. 
-                    His ability to debug complex issues and optimize the system for real-time performance stood out. 
-                    It was inspiring to see how he integrated software and hardware seamlessly.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section> -->
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
+        <div class="mstat commits">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><line x1="3" y1="12" x2="9" y2="12"/><line x1="15" y1="12" x2="21" y2="12"/>
+          </svg>
+          <span id="mcommits">—</span> Commits
         </div>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <!-- <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header> -->
-
-        <header>
-          <h2 class="h2 article-title">
-            <a href="./assets\images\Hardik_Parmar_Resume.pdf" download="Hardik_Parmar_Resume.pdf" style="color: inherit; text-decoration: none;">Resume ↗</a>
-          </h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Data Analytics and Machine Learning Intern @ Infolabz</h4>
-
-              <span>Jul 2023 - Jul 2023</span>
-
-              <p class="timeline-text">
-                <br>
-                Collaborated with a team to optimize ML pipelines for seamless deployment in production. <br>
-                <br>
-                Deployed machine learning models, including an image classifier, with a 13% accuracy improvement using CI/CD pipelines for seamless integration and deployment. <br>
-                <br>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Machine Learning Intern @ iNeuron.ai</h4>
-
-              <span>Mar 2023 - May 2023</span>
-
-              <p class="timeline-text">
-                <br>
-                Performed customer sentiment analysis to measure user engagement levels on 5 different online platforms,resulting in enhanced targeting accuracy by 30%. <br>
-                <br>
-                Applied unsupervised learning techniques such as K-Means clustering and dimension reduction methods toclassify customer preferences into distinct clusters, increasing accuracy by 27%. <br>
-                <br>
-                Analyzed customer data to gain insights & inform strategic decisions, resulting in a 15% increase in market share. <br>
-                <br>
-                Utilized machine learning techniques to predict purchasing habits based on large-scale customer personality data,leading to a 17% increase in revenues.
-                <br>
-              </p>
-
-            </li>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Vishwakarma Government Engineering College, Ahmedabad</h4>
-
-              <span>2020-2024</span>
-
-              <p class="timeline-text">
-                B.E. Electronics & Communication Engineering <br>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Mount Carmel High School, Gandhinagar</h4>
-
-              <span>2018-2020</span>
-
-              <p class="timeline-text">
-                Physics, Chemistry & Mathematics <br>
-              </p>
-
-            </li>
-
-<!--             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Shantiniketan Vidhyavihar, Kalol</h4>
-
-              <span>2008-2018</span>
-
-              <p class="timeline-text">
-                10th <br>
-                96%
-              </p>
-
-            </li> -->
-
-          </ol>
-
-        </section>
-
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Programming: Python, C++, SQL</h5>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Machine Learning: TensorFlow, PyTorch, Keras, Scikit-learn, LLM, Pandas, NumPy</h5>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Cloud and Databases: MongoDB, MySQL, AWS</h5>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Development Tools: OpenCV, Flask, FastAPI, Docker, Git, Linux, CI/CD, SDLC</h5>
-              </div>
-
-              <!-- <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div> -->
-
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="projects" data-page="projects">
-
-        <header>
-          <h2 class="h2 article-title">Projects</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>all</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>End-to-End</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>gen-ai</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>chatbot/agents</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>all</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>End-to-End</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>gen-ai</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>chatbot/agents</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="end-to-end">
-              <a href="https://github.com/hardikjp7/Diabetes-Prediction-With-Deployment" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p1.png" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Diabetes Prediction With Deployment</h3>
-
-                <p class="project-category">End to End</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="chatbot/agents">
-              <a href="https://github.com/hardikjp7/GeminiPro-ChatBot" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">GeminiPro ChatBot</h3>
-
-                <p class="project-category">chatbot/agents</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="chatbot/agents">
-              <a href="https://github.com/hardikjp7/Ai-Research-Assistant" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p3.png" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Ai Research Assistant</h3>
-
-                <p class="project-category">chatbot/agents</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="chatbot/agents">
-              <a href="https://github.com/hardikjp7/ResumeMatcher-ATS" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">ResumeMatcher ATS</h3>
-
-                <p class="project-category">chatbot/agents</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="end-to-end">
-              <a href="https://github.com/hardikjp7/Movies-Recommender-System" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Movies Recommender System</h3>
-
-                <p class="project-category">end-to-end</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="gen-ai">
-              <a href="https://github.com/hardikjp7/GeminiNutri-AI" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">GeminiNutri AI</h3>
-
-                <p class="project-category">gen-ai</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="end-to-end">
-              <a href="https://github.com/hardikjp7/Fraudulent-Transactions-Prediction" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fraudulent Transactions Prediction</h3>
-
-                <p class="project-category">end-to-end</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="end-to-end">
-              <a href="https://github.com/hardikjp7/Olympics-Data-Analysis-with-Deployment" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p8.png" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Olympics Data Analysis</h3>
-
-                <p class="project-category">end-to-end</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="all">
-              <a href="https://github.com/hardikjp7/SteelPlate-Multiclass-EDA-Modeling" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">SteelPlate Multiclass EDA Modeling</h3>
-
-                <p class="project-category">all</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="gen-ai">
-              <a href="https://github.com/hardikjp7/DeepSeek-R1-RAG-for-Document-QA" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p10.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DeepSeek-R1: RAG for Document Q&A</h3>
-
-                <p class="project-category">gen-ai</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="chatbot/agents">
-              <a href="https://github.com/hardikjp7/GroqMultiChat" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p11.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Groq Multi Chat</h3>
-
-                <p class="project-category">chatbot/agents</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="gen-ai">
-              <a href="https://github.com/hardikjp7/Blog-Generation-LLM-App" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p12.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Blog Gen LLM App</h3>
-
-                <p class="project-category">gen-ai</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <!-- <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article> -->
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114280.89271659244!2d73.78056532032213!3d18.524761375528424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf2e67461101%3A0x828d43bf9d9ee343!2sPune%2C%20Maharashtra!5e1!3m2!1sen!2sin!4v1752918668358!5m2!1sen!2sin"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="https://getform.io/f/arondrvb" method="POST" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input rows="6"></textarea>
-
-            <button class="form-btn" type="submit" data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
+      </div>
+      <div class="mdesc" id="mdesc"></div>
+      <a class="mghlink" id="mlink" href="#" target="_blank">
+        View on GitHub
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M1 11L11 1M11 1H4M11 1v7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">HP<span>.</span></a>
+  <ul class="nav-links" id="nl">
+    <li><a href="#about">About</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certs">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="tt" title="Toggle theme">🌙</button>
+    <a href="./assets/images/Hardik_Parmar_Resume.pdf" class="nav-cta" target="_blank">Download CV</a>
+    <button class="hamburger" id="hb" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Available for opportunities</div>
+      <h1><span>Hardik</span><br><span class="accent">Parmar</span></h1>
+      <div class="typed-wrap"><span id="tw"></span><span class="tcursor"></span></div>
+      <p class="hero-desc">Specializing in building intelligent systems — from predictive models to generative applications — that solve real-world problems with impact and efficiency.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Projects <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-avatar">
+        <img src="./assets/images/me.png" alt="Hardik Parmar" onerror="this.style.display='none';this.parentElement.textContent='HP'"/>
+      </div>
+      <h3>Hardik Parmar</h3>
+      <div class="role">AI / ML Engineer</div>
+      <div class="ci-list">
+        <div class="ci"><div class="ico">✉️</div><a href="mailto:hardikparmar7174@gmail.com">hardikparmar7174@gmail.com</a></div>
+        <div class="ci"><div class="ico">📞</div><a href="tel:+918128542910">+91 8128542910</a></div>
+        <div class="ci"><div class="ico">📍</div><span>Pune, Maharashtra</span></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-n">400+</div><div class="stat-l">Problems solved</div></div>
+        <div class="stat"><div class="stat-n">1.5+</div><div class="stat-l">Years Experience</div></div>
+        <div class="stat"><div class="stat-n">2024</div><div class="stat-l">Graduate</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="slabel">Introduction</div>
+  <h2>About Me</h2>
+  <div class="ag">
+    <div class="about-text">
+      <p>I'm a <strong>Machine Learning enthusiast</strong> and 2024 graduate in Electronics and Communication Engineering. I specialize in building AI solutions, from predictive models to generative applications, to solve real-world problems.</p>
+      <p>My focus is on creating <strong>impactful and user-friendly AI systems</strong> that simplify complex challenges. With a passion for innovation and continuous learning, I aim to deliver solutions that make technology accessible and efficient.</p>
+    </div>
+    <div class="svcs">
+      <div class="svc fi"><div class="svc-ico">🤖</div><h4>Machine Learning Solutions</h4><p>Developing and deploying advanced ML models to address real-world challenges effectively.</p></div>
+      <div class="svc fi"><div class="svc-ico">⚡</div><h4>AI Applications</h4><p>Building user-friendly AI-powered apps including predictive systems and generative AI tools.</p></div>
+      <div class="svc fi"><div class="svc-ico">📊</div><h4>Data Analysis</h4><p>Performing data preprocessing, visualization, and analytics to uncover actionable insights.</p></div>
+      <div class="svc fi"><div class="svc-ico">🚀</div><h4>End-to-End Projects</h4><p>Designing complete solutions from model development to deployment with scalability in mind.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME -->
+<div id="resume">
+  <div class="inner">
+    <div class="slabel">Background</div>
+    <h2>Resume</h2>
+    <div class="rg">
+      <div class="rc">
+        <h3><span>💼</span> Experience</h3>
+        <div class="tl">
+          <div class="tli fi"><div class="td">Feb 2026 — current</div><div class="tt">Assistant System Engineer</div><div class="to">Tata Consultancy Services</div><div class="tx">Those <strong style="color:var(--text)">details</strong> will be updated.</div></div>
+          <div class="tli fi"><div class="td">Jul 2023 — Jul 2023</div><div class="tt">Data Analytics & ML Intern</div><div class="to">Infolabz</div><div class="tx">Collaborated to optimize ML pipelines for production. Deployed image classifier with a <strong style="color:var(--text)">13% accuracy improvement</strong> using CI/CD pipelines.</div></div>
+          <div class="tli fi"><div class="td">Mar 2023 — May 2023</div><div class="tt">Machine Learning Intern</div><div class="to">iNeuron.ai</div><div class="tx">Performed customer sentiment analysis across 5 platforms, enhancing targeting accuracy by <strong style="color:var(--text)">30%</strong>. Applied K-Means clustering with <strong style="color:var(--text)">27% improved accuracy</strong>. Drove 15% market share increase and 17% revenue growth.</div></div>
+        </div>
+      </div>
+      <div class="rc">
+        <h3><span>🎓</span> Education</h3>
+        <div class="tl">
+          <div class="tli fi"><div class="td">2020 — 2024</div><div class="tt">B.E. Electronics & Communication Engineering</div><div class="to">Vishwakarma Government Engineering College, Ahmedabad</div><div class="tx">Four-year undergraduate degree in ECE with focus on ML and signal processing.</div></div>
+          <div class="tli fi"><div class="td">2018 — 2020</div><div class="tt">Physics, Chemistry & Mathematics</div><div class="to">Mount Carmel High School, Gandhinagar</div><div class="tx">Completed higher secondary education with science stream.</div></div>
+        </div>
+      </div>
     </div>
 
-  </main>
+    <!-- SKILLS -->
+    <div class="skills-sec">
+      <h3><span style="width:26px;height:26px;border-radius:6px;background:rgba(127,255,110,.15);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;">🛠</span>&nbsp;My Skills</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;">
+        <div class="skcat fi"><div class="skcat-l">Programming</div><div class="sktags"><span class="skt">Python</span><span class="skt">C++</span><span class="skt">SQL</span></div></div>
+        <div class="skcat fi"><div class="skcat-l">Machine Learning</div><div class="sktags"><span class="skt">TensorFlow</span><span class="skt">PyTorch</span><span class="skt">Keras</span><span class="skt">Scikit-learn</span><span class="skt">LLM</span><span class="skt">Pandas</span><span class="skt">NumPy</span></div></div>
+        <div class="skcat fi"><div class="skcat-l">Cloud & Databases</div><div class="sktags"><span class="skt">MongoDB</span><span class="skt">MySQL</span><span class="skt">AWS</span></div></div>
+        <div class="skcat fi"><div class="skcat-l">Dev Tools</div><div class="sktags"><span class="skt">OpenCV</span><span class="skt">Flask</span><span class="skt">FastAPI</span><span class="skt">Docker</span><span class="skt">Git</span><span class="skt">Linux</span><span class="skt">CI/CD</span></div></div>
+      </div>
+    </div>
 
+    <!-- GITHUB LIVE STATS -->
+    <div class="ghsec">
+      <h3><span style="width:26px;height:26px;border-radius:6px;background:rgba(127,255,110,.15);display:inline-flex;align-items:center;justify-content:center;font-size:.8rem;">🐙</span>&nbsp;Live GitHub Stats</h3>
+      <div class="ghg" id="ghg"><div class="gh-msg">Fetching live GitHub data…</div></div>
+    </div>
+  </div>
+</div>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="slabel">Portfolio</div>
+  <h2>Projects</h2>
+  <div class="fbar" id="fb">
+    <button class="fbtn active" data-f="all">All</button>
+    <button class="fbtn" data-f="end-to-end">End-to-End</button>
+    <button class="fbtn" data-f="gen-ai">Gen AI</button>
+    <button class="fbtn" data-f="chatbot">Chatbot / Agents</button>
+  </div>
+  <div class="pgrid" id="pg"></div>
+</section>
 
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="slabel">Credentials</div>
+  <h2>Certifications</h2>
+  <div class="cert-grid">
+    <a href="#" target="_blank" class="cert-card fi">
+      <div class="cert-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+<path fill="#252f3e" d="M13.527,21.529c0,0.597,0.064,1.08,0.176,1.435c0.128,0.355,0.287,0.742,0.511,1.161 c0.08,0.129,0.112,0.258,0.112,0.371c0,0.161-0.096,0.322-0.303,0.484l-1.006,0.677c-0.144,0.097-0.287,0.145-0.415,0.145 c-0.16,0-0.319-0.081-0.479-0.226c-0.224-0.242-0.415-0.5-0.575-0.758c-0.16-0.274-0.319-0.58-0.495-0.951 c-1.245,1.483-2.81,2.225-4.694,2.225c-1.341,0-2.411-0.387-3.193-1.161s-1.181-1.806-1.181-3.096c0-1.37,0.479-2.483,1.453-3.321 s2.267-1.258,3.911-1.258c0.543,0,1.102,0.048,1.692,0.129s1.197,0.21,1.836,0.355v-1.177c0-1.225-0.255-2.08-0.75-2.58 c-0.511-0.5-1.373-0.742-2.602-0.742c-0.559,0-1.133,0.064-1.724,0.21c-0.591,0.145-1.165,0.322-1.724,0.548 c-0.255,0.113-0.447,0.177-0.559,0.21c-0.112,0.032-0.192,0.048-0.255,0.048c-0.224,0-0.335-0.161-0.335-0.5v-0.79 c0-0.258,0.032-0.451,0.112-0.564c0.08-0.113,0.224-0.226,0.447-0.339c0.559-0.29,1.229-0.532,2.012-0.726 c0.782-0.21,1.612-0.306,2.49-0.306c1.9,0,3.289,0.435,4.183,1.306c0.878,0.871,1.325,2.193,1.325,3.966v5.224H13.527z M7.045,23.979c0.527,0,1.07-0.097,1.644-0.29c0.575-0.193,1.086-0.548,1.517-1.032c0.255-0.306,0.447-0.645,0.543-1.032 c0.096-0.387,0.16-0.855,0.16-1.403v-0.677c-0.463-0.113-0.958-0.21-1.469-0.274c-0.511-0.064-1.006-0.097-1.501-0.097 c-1.07,0-1.852,0.21-2.379,0.645s-0.782,1.048-0.782,1.854c0,0.758,0.192,1.322,0.591,1.709 C5.752,23.786,6.311,23.979,7.045,23.979z M19.865,25.721c-0.287,0-0.479-0.048-0.607-0.161c-0.128-0.097-0.239-0.322-0.335-0.629 l-3.752-12.463c-0.096-0.322-0.144-0.532-0.144-0.645c0-0.258,0.128-0.403,0.383-0.403h1.565c0.303,0,0.511,0.048,0.623,0.161 c0.128,0.097,0.223,0.322,0.319,0.629l2.682,10.674l2.49-10.674c0.08-0.322,0.176-0.532,0.303-0.629 c0.128-0.097,0.351-0.161,0.639-0.161h1.277c0.303,0,0.511,0.048,0.639,0.161c0.128,0.097,0.239,0.322,0.303,0.629l2.522,10.803 l2.762-10.803c0.096-0.322,0.208-0.532,0.319-0.629c0.128-0.097,0.335-0.161,0.623-0.161h1.485c0.255,0,0.399,0.129,0.399,0.403 c0,0.081-0.016,0.161-0.032,0.258s-0.048,0.226-0.112,0.403l-3.847,12.463c-0.096,0.322-0.208,0.532-0.335,0.629 s-0.335,0.161-0.607,0.161h-1.373c-0.303,0-0.511-0.048-0.639-0.161c-0.128-0.113-0.239-0.322-0.303-0.645l-2.474-10.4 L22.18,24.915c-0.08,0.322-0.176,0.532-0.303,0.645c-0.128,0.113-0.351,0.161-0.639,0.161H19.865z M40.379,26.156 c-0.83,0-1.66-0.097-2.458-0.29c-0.798-0.193-1.421-0.403-1.836-0.645c-0.255-0.145-0.431-0.306-0.495-0.451 c-0.064-0.145-0.096-0.306-0.096-0.451v-0.822c0-0.339,0.128-0.5,0.367-0.5c0.096,0,0.192,0.016,0.287,0.048 c0.096,0.032,0.239,0.097,0.399,0.161c0.543,0.242,1.133,0.435,1.756,0.564c0.639,0.129,1.261,0.193,1.9,0.193 c1.006,0,1.788-0.177,2.331-0.532c0.543-0.355,0.83-0.871,0.83-1.532c0-0.451-0.144-0.822-0.431-1.129 c-0.287-0.306-0.83-0.58-1.612-0.838l-2.315-0.726c-1.165-0.371-2.027-0.919-2.554-1.645c-0.527-0.709-0.798-1.499-0.798-2.338 c0-0.677,0.144-1.274,0.431-1.79s0.671-0.967,1.149-1.322c0.479-0.371,1.022-0.645,1.66-0.838C39.533,11.081,40.203,11,40.906,11 c0.351,0,0.718,0.016,1.07,0.064c0.367,0.048,0.702,0.113,1.038,0.177c0.319,0.081,0.623,0.161,0.91,0.258s0.511,0.193,0.671,0.29 c0.224,0.129,0.383,0.258,0.479,0.403c0.096,0.129,0.144,0.306,0.144,0.532v0.758c0,0.339-0.128,0.516-0.367,0.516 c-0.128,0-0.335-0.064-0.607-0.193c-0.91-0.419-1.932-0.629-3.065-0.629c-0.91,0-1.628,0.145-2.123,0.451 c-0.495,0.306-0.75,0.774-0.75,1.435c0,0.451,0.16,0.838,0.479,1.145c0.319,0.306,0.91,0.613,1.756,0.887l2.267,0.726 c1.149,0.371,1.98,0.887,2.474,1.548s0.734,1.419,0.734,2.257c0,0.693-0.144,1.322-0.415,1.87 c-0.287,0.548-0.671,1.032-1.165,1.419c-0.495,0.403-1.086,0.693-1.772,0.903C41.943,26.043,41.193,26.156,40.379,26.156z"></path><path fill="#f90" d="M43.396,33.992c-5.252,3.918-12.883,5.998-19.445,5.998c-9.195,0-17.481-3.434-23.739-9.142 c-0.495-0.451-0.048-1.064,0.543-0.709c6.769,3.966,15.118,6.369,23.755,6.369c5.827,0,12.229-1.225,18.119-3.741 C43.508,32.364,44.258,33.347,43.396,33.992z M45.583,31.477c-0.671-0.871-4.438-0.419-6.146-0.21 c-0.511,0.064-0.591-0.387-0.128-0.726c3.001-2.128,7.934-1.516,8.509-0.806c0.575,0.726-0.16,5.708-2.969,8.094 c-0.431,0.371-0.846,0.177-0.655-0.306C44.833,35.927,46.254,32.331,45.583,31.477z"></path>
+</svg>
+      </div>
+      <div>
+        <div class="cert-issuer">Amazon Web Services</div>
+        <div class="cert-name">AWS Machine Learning Associate</div>
+        <div class="cert-date">May 2026</div>
+        <div class="cert-verify">View credential ↗</div>
+      </div>
+    </a>
+    <a href="https://learn.microsoft.com/en-us/users/hardikjp7/credentials/5c34c4260f843057" target="_blank" class="cert-card fi">
+      <div class="cert-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 50 50">
+      <path fill="#ff5722" d="M6 6H22V22H6z" transform="rotate(-180 14 14)"></path>
+      <path fill="#4caf50" d="M26 6H42V22H26z" transform="rotate(-180 34 14)"></path>
+      <path fill="#ffc107" d="M26 26H42V42H26z" transform="rotate(-180 34 34)"></path>
+      <path fill="#03a9f4" d="M6 26H22V42H6z" transform="rotate(-180 14 34)"></path>
+    </svg>
+  </div>
+      <div>
+        <div class="cert-issuer">Microsoft</div>
+        <div class="cert-name">GitHub Foundations</div>
+        <div class="cert-date">Feb 2026</div>
+        <div class="cert-verify">View credential ↗</div>
+      </div>
+    </a>
+    <a href="https://www.coursera.org/account/accomplishments/verify/TFLQKPZDANJ7" target="_blank" class="cert-card fi">
+      <div class="cert-logo">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" viewBox="0 0 180 179" enable-background="new 0 0 180 179" xml:space="preserve">
+<path fill="#00000000" opacity="1.000000" stroke="none" 
+	d="
+M1.000000,63.000000 
+	C1.000000,42.000004 1.000000,21.500010 1.000000,1.000011 
+	C60.999981,1.000007 120.999962,1.000007 180.999954,1.000004 
+	C180.999969,60.666630 180.999969,120.333260 180.999985,179.999908 
+	C121.000046,179.999939 61.000095,179.999939 1.000072,179.999969 
+	C1.000000,141.166672 1.000000,102.333336 1.000000,63.000000 
+M8.381300,84.874130 
+	C4.332882,138.759140 54.023685,182.563248 106.914284,171.734268 
+	C152.764832,162.346664 181.988983,117.250214 171.453720,72.141975 
+	C160.750763,26.315731 115.277710,-1.099555 69.626114,10.652122 
+	C39.690239,18.358246 11.740781,45.172977 8.381300,84.874130 
+z"/>
+<path fill="#FF4D64" opacity="1.000000" stroke="none" 
+	d="
+M8.394018,84.415009 
+	C11.740781,45.172977 39.690239,18.358246 69.626114,10.652122 
+	C115.277710,-1.099555 160.750763,26.315731 171.453720,72.141975 
+	C181.988983,117.250214 152.764832,162.346664 106.914284,171.734268 
+	C54.023685,182.563248 4.332882,138.759140 8.394018,84.415009 
+M141.388794,113.843651 
+	C159.778122,86.877586 156.252167,50.888321 133.180695,30.063969 
+	C113.339737,12.155480 85.893173,8.446219 63.152222,20.599981 
+	C39.752071,33.106052 26.392986,59.329880 30.169554,85.344810 
+	C33.876770,110.882027 51.898098,131.512039 76.039459,137.854660 
+	C100.364311,144.245468 124.784943,135.436630 141.388794,113.843651 
+z"/>
+<path fill="#FFF8F9" opacity="1.000000" stroke="none" 
+	d="
+M141.182739,114.137314 
+	C124.784943,135.436630 100.364311,144.245468 76.039459,137.854660 
+	C51.898098,131.512039 33.876770,110.882027 30.169554,85.344810 
+	C26.392986,59.329880 39.752071,33.106052 63.152222,20.599981 
+	C85.893173,8.446219 113.339737,12.155480 133.180695,30.063969 
+	C156.252167,50.888321 159.778122,86.877586 141.182739,114.137314 
+M60.493526,117.083786 
+	C71.988075,124.104836 84.441376,126.436852 97.795349,125.218437 
+	C128.270462,122.437889 151.452072,93.150887 146.877319,62.968231 
+	C143.129883,38.243912 122.542984,18.839575 97.185707,16.131052 
+	C71.112450,13.346050 46.290165,28.375496 37.674103,52.164249 
+	C28.835396,76.567719 37.421288,101.532364 60.493526,117.083786 
+z"/>
+<path fill="#FF4E64" opacity="1.000000" stroke="none" 
+	d="
+M60.182755,116.895691 
+	C37.421288,101.532364 28.835396,76.567719 37.674103,52.164249 
+	C46.290165,28.375496 71.112450,13.346050 97.185707,16.131052 
+	C122.542984,18.839575 143.129883,38.243912 146.877319,62.968231 
+	C151.452072,93.150887 128.270462,122.437889 97.795349,125.218437 
+	C84.441376,126.436852 71.988075,124.104836 60.182755,116.895691 
+M115.541092,29.910295 
+	C105.451164,22.688658 94.297867,20.153212 82.028084,22.018015 
+	C63.853840,24.780197 48.500954,40.802567 47.118614,58.647041 
+	C45.597332,78.285118 57.966511,95.564011 77.595558,101.221268 
+	C97.260254,106.888786 118.525291,98.034279 127.797401,80.317833 
+	C136.764709,63.183773 132.120834,43.285732 115.541092,29.910295 
+z"/>
+<path fill="#FFF8F9" opacity="1.000000" stroke="none" 
+	d="
+M115.835136,30.116131 
+	C132.120834,43.285732 136.764709,63.183773 127.797401,80.317833 
+	C118.525291,98.034279 97.260254,106.888786 77.595558,101.221268 
+	C57.966511,95.564011 45.597332,78.285118 47.118614,58.647041 
+	C48.500954,40.802567 63.853840,24.780197 82.028084,22.018015 
+	C94.297867,20.153212 105.451164,22.688658 115.835136,30.116131 
+M56.976593,64.114395 
+	C57.626102,66.859428 57.988251,69.712708 58.974426,72.330933 
+	C63.461178,84.242935 71.737915,92.249992 84.385796,94.608498 
+	C96.650513,96.895554 107.074600,92.795578 115.202408,83.338539 
+	C127.199829,69.379097 126.466949,47.309837 113.706772,34.065155 
+	C99.852432,19.684771 77.544907,20.653461 64.935242,36.156830 
+	C58.499569,44.069378 56.158421,53.170998 56.976593,64.114395 
+z"/>
+<path fill="#FF4D64" opacity="1.000000" stroke="none" 
+	d="
+M56.944817,63.658913 
+	C56.158421,53.170998 58.499569,44.069378 64.935242,36.156830 
+	C77.544907,20.653461 99.852432,19.684771 113.706772,34.065155 
+	C126.466949,47.309837 127.199829,69.379097 115.202408,83.338539 
+	C107.074600,92.795578 96.650513,96.895554 84.385796,94.608498 
+	C71.737915,92.249992 63.461178,84.242935 58.974426,72.330933 
+	C57.988251,69.712708 57.626102,66.859428 56.944817,63.658913 
+M107.862076,45.546585 
+	C107.609184,44.078590 107.462601,42.582668 107.085472,41.147316 
+	C105.197189,33.960449 99.150269,28.649540 91.990204,27.808149 
+	C84.201614,26.892902 77.329941,30.382996 73.652191,37.121952 
+	C70.060997,43.702301 70.855705,51.893387 75.968765,57.531044 
+	C80.934914,63.006706 87.134254,65.281219 94.413513,63.100769 
+	C102.645638,60.634888 106.873146,54.759251 107.862076,45.546585 
+z"/>
+<path fill="#FFFCFD" opacity="1.000000" stroke="none" 
+	d="
+M107.851074,45.955803 
+	C106.873146,54.759251 102.645638,60.634888 94.413513,63.100769 
+	C87.134254,65.281219 80.934914,63.006706 75.968765,57.531044 
+	C70.855705,51.893387 70.060997,43.702301 73.652191,37.121952 
+	C77.329941,30.382996 84.201614,26.892902 91.990204,27.808149 
+	C99.150269,28.649540 105.197189,33.960449 107.085472,41.147316 
+	C107.462601,42.582668 107.609184,44.078590 107.851074,45.955803 
+z"/>
+</svg>
+      </div>
+      <div>
+        <div class="cert-issuer">DeepLearning.AI</div>
+        <div class="cert-name">Machine Learning Specialization</div>
+        <div class="cert-date">March 2023</div>
+        <div class="cert-verify">View credential ↗</div>
+      </div>
+    </a>
+    <a href="https://www.udemy.com/certificate/UC-59fecebb-4540-466d-bc78-0aa504094a27/" target="_blank" class="cert-card fi">
+      <div class="cert-logo">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" viewBox="0 0 900 900" enable-background="new 0 0 900 900" xml:space="preserve">
+<path fill="#00000000" opacity="1.000000" stroke="none" 
+	d="
+M623.000000,901.000000 
+	C415.333344,901.000000 208.166672,901.000000 1.000000,901.000000 
+	C1.000000,601.000000 1.000000,301.000000 1.000000,1.000000 
+	C301.000000,1.000000 601.000000,1.000000 901.000000,1.000000 
+	C901.000000,301.000000 901.000000,601.000000 901.000000,901.000000 
+	C808.500000,901.000000 716.000000,901.000000 623.000000,901.000000 
+M417.174103,792.209656 
+	C432.929718,792.614319 448.688293,793.440125 464.440247,793.328125 
+	C490.017944,793.146118 514.574829,787.521912 537.833984,776.959717 
+	C563.508850,765.300537 585.576599,748.954224 601.778320,725.408264 
+	C620.867065,697.666504 627.908264,666.191284 628.174683,633.359802 
+	C628.798340,556.534424 628.336975,479.700500 628.467346,402.870270 
+	C628.474915,398.413483 627.161621,397.248535 622.804016,397.278259 
+	C595.639587,397.463531 568.473328,397.370270 541.307678,397.372375 
+	C534.634521,397.372894 534.627258,397.378174 534.627380,404.263275 
+	C534.628479,478.260498 534.667297,552.257751 534.606995,626.254944 
+	C534.593994,642.225464 530.612305,657.334961 522.088318,670.801880 
+	C499.686127,706.194885 455.187897,718.989136 416.682587,702.235352 
+	C384.058167,688.040344 367.708557,661.571167 367.498810,626.195435 
+	C367.058075,551.867493 367.327637,477.535095 367.460968,403.204803 
+	C367.469116,398.663696 366.322021,397.230408 361.636841,397.267426 
+	C334.472870,397.482056 307.306366,397.372040 280.140717,397.374268 
+	C273.649170,397.374817 273.636597,397.379028 273.636322,403.928497 
+	C273.633392,479.259003 273.558502,554.589600 273.693237,629.919861 
+	C273.723297,646.728699 275.498810,663.371521 279.591766,679.788696 
+	C288.497742,715.511475 308.534302,743.245544 338.896301,763.678040 
+	C362.350433,779.461853 388.417755,788.263123 417.174103,792.209656 
+M304.157745,295.670868 
+	C308.463470,293.182159 312.770996,290.696655 317.074585,288.204315 
+	C360.314880,263.162598 403.563110,238.134537 446.774933,213.043808 
+	C449.638794,211.380920 452.048920,211.178833 455.041565,212.920959 
+	C483.883881,229.711395 512.799255,246.376419 541.689819,263.084106 
+	C569.161072,278.970947 596.624878,294.870697 624.108276,310.736542 
+	C625.045349,311.277466 626.158386,311.513519 627.923218,312.160797 
+	C628.038086,309.693909 628.201050,307.780853 628.205200,305.867462 
+	C628.271606,275.042206 628.376221,244.216599 628.218994,213.392349 
+	C628.209900,211.601807 626.453186,209.130722 624.809265,208.147247 
+	C611.839783,200.388260 598.701294,192.911850 585.612244,185.352829 
+	C542.192261,160.277405 498.754303,135.232895 455.385345,110.069420 
+	C452.208862,108.226357 449.732727,108.333313 446.651581,110.156502 
+	C436.507690,116.158882 426.198517,121.880981 415.993744,127.781502 
+	C370.003235,154.373840 324.050446,181.031601 277.995178,207.511261 
+	C274.731659,209.387619 273.719666,211.485214 273.732056,215.046356 
+	C273.838104,245.541046 273.783539,276.036285 273.803833,306.531372 
+	C273.804962,308.248016 274.042084,309.964569 274.250854,312.780579 
+	C284.611633,306.802368 294.040283,301.362000 304.157745,295.670868 
+z"/>
+<path fill="#020202" opacity="1.000000" stroke="none" 
+	d="
+M416.744354,792.093384 
+	C388.417755,788.263123 362.350433,779.461853 338.896301,763.678040 
+	C308.534302,743.245544 288.497742,715.511475 279.591766,679.788696 
+	C275.498810,663.371521 273.723297,646.728699 273.693237,629.919861 
+	C273.558502,554.589600 273.633392,479.259003 273.636322,403.928497 
+	C273.636597,397.379028 273.649170,397.374817 280.140717,397.374268 
+	C307.306366,397.372040 334.472870,397.482056 361.636841,397.267426 
+	C366.322021,397.230408 367.469116,398.663696 367.460968,403.204803 
+	C367.327637,477.535095 367.058075,551.867493 367.498810,626.195435 
+	C367.708557,661.571167 384.058167,688.040344 416.682587,702.235352 
+	C455.187897,718.989136 499.686127,706.194885 522.088318,670.801880 
+	C530.612305,657.334961 534.593994,642.225464 534.606995,626.254944 
+	C534.667297,552.257751 534.628479,478.260498 534.627380,404.263275 
+	C534.627258,397.378174 534.634521,397.372894 541.307678,397.372375 
+	C568.473328,397.370270 595.639587,397.463531 622.804016,397.278259 
+	C627.161621,397.248535 628.474915,398.413483 628.467346,402.870270 
+	C628.336975,479.700500 628.798340,556.534424 628.174683,633.359802 
+	C627.908264,666.191284 620.867065,697.666504 601.778320,725.408264 
+	C585.576599,748.954224 563.508850,765.300537 537.833984,776.959717 
+	C514.574829,787.521912 490.017944,793.146118 464.440247,793.328125 
+	C448.688293,793.440125 432.929718,792.614319 416.744354,792.093384 
+z"/>
+<path fill="#A438F0" opacity="1.000000" stroke="none" 
+	d="
+M303.813354,295.796265 
+	C294.040283,301.362000 284.611633,306.802368 274.250854,312.780579 
+	C274.042084,309.964569 273.804962,308.248016 273.803833,306.531372 
+	C273.783539,276.036285 273.838104,245.541046 273.732056,215.046356 
+	C273.719666,211.485214 274.731659,209.387619 277.995178,207.511261 
+	C324.050446,181.031601 370.003235,154.373840 415.993744,127.781502 
+	C426.198517,121.880981 436.507690,116.158882 446.651581,110.156502 
+	C449.732727,108.333313 452.208862,108.226357 455.385345,110.069420 
+	C498.754303,135.232895 542.192261,160.277405 585.612244,185.352829 
+	C598.701294,192.911850 611.839783,200.388260 624.809265,208.147247 
+	C626.453186,209.130722 628.209900,211.601807 628.218994,213.392349 
+	C628.376221,244.216599 628.271606,275.042206 628.205200,305.867462 
+	C628.201050,307.780853 628.038086,309.693909 627.923218,312.160797 
+	C626.158386,311.513519 625.045349,311.277466 624.108276,310.736542 
+	C596.624878,294.870697 569.161072,278.970947 541.689819,263.084106 
+	C512.799255,246.376419 483.883881,229.711395 455.041565,212.920959 
+	C452.048920,211.178833 449.638794,211.380920 446.774933,213.043808 
+	C403.563110,238.134537 360.314880,263.162598 317.074585,288.204315 
+	C312.770996,290.696655 308.463470,293.182159 303.813354,295.796265 
+z"/>
+</svg>
+      </div>
+      <div>
+        <div class="cert-issuer">Udemy</div>
+        <div class="cert-name">Machine Learning A-Z™: AI, Python & R</div>
+        <div class="cert-date">Feb 2023</div>
+        <div class="cert-verify">View credential ↗</div>
+      </div>
+    </a>
+    <a href="https://www.coursera.org/account/accomplishments/verify/M3VAM7HDGX42" target="_blank" class="cert-card fi">
+      <div class="cert-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+          <path fill="#FFC107"
+            d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z">
+          </path>
+          <path fill="#FF3D00"
+            d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z">
+          </path>
+          <path fill="#4CAF50"
+            d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z">
+          </path>
+          <path fill="#1976D2"
+            d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z">
+          </path>
+        </svg>
+      </div>
+      <div>
+        <div class="cert-issuer">Google</div>
+        <div class="cert-name">Crash course on Python </div>
+        <div class="cert-date">March 2023</div>
+        <div class="cert-verify">View credential ↗</div>
+      </div>
+    </a>
+    <a href="https://www.hackerrank.com/certificates/2853b591eea7" target="_blank" class="cert-card fi">
+      <div class="cert-logo">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" viewBox="0 0 670 670" enable-background="new 0 0 670 670" xml:space="preserve">
+<path fill="#0D141E" opacity="1.000000" stroke="none" 
+	d="
+M429.000000,671.000000 
+	C286.000000,671.000000 143.500000,671.000000 1.000000,671.000000 
+	C1.000000,447.666656 1.000000,224.333328 1.000000,1.000000 
+	C224.333328,1.000000 447.666656,1.000000 671.000000,1.000000 
+	C671.000000,224.333328 671.000000,447.666656 671.000000,671.000000 
+	C590.500000,671.000000 510.000000,671.000000 429.000000,671.000000 
+M611.950928,509.912140 
+	C617.361450,509.641937 617.022461,505.761383 617.021912,501.978027 
+	C617.006104,396.329987 617.010132,290.681946 617.007080,185.033890 
+	C617.006836,177.156631 616.269348,176.390350 608.505920,176.389587 
+	C530.852966,176.381973 453.199982,176.382202 375.546997,176.389282 
+	C367.836273,176.389984 367.008514,177.240875 367.008270,185.021103 
+	C367.005096,290.502502 367.005249,395.983917 367.007629,501.465332 
+	C367.007782,509.348633 367.596161,509.931610 375.582947,509.931732 
+	C454.069122,509.933044 532.555298,509.929749 611.950928,509.912140 
+M325.420776,302.500427 
+	C325.420410,263.002777 325.426697,223.505112 325.413116,184.007446 
+	C325.410858,177.449020 324.450195,176.487289 317.893677,176.481827 
+	C295.228241,176.462982 272.562836,176.467056 249.897400,176.479095 
+	C242.738632,176.482895 242.007736,177.245255 242.006668,184.607574 
+	C242.001297,221.605545 242.004028,258.603516 242.003937,295.601501 
+	C242.003937,297.383209 242.003937,299.164917 242.003937,301.207214 
+	C214.029358,301.207214 186.624817,301.207214 158.712753,301.207214 
+	C158.712753,299.216095 158.712753,297.429657 158.712753,295.643219 
+	C158.712570,258.478577 158.715668,221.313950 158.709198,184.149323 
+	C158.708023,177.401230 157.865234,176.489456 151.391113,176.483337 
+	C128.392410,176.461624 105.393639,176.459564 82.394928,176.485596 
+	C76.386597,176.492386 75.407143,177.468903 75.406448,183.447067 
+	C75.393959,289.941254 75.393814,396.435425 75.404129,502.929596 
+	C75.404709,508.957123 76.351685,509.909271 82.342300,509.915131 
+	C105.341019,509.937714 128.339767,509.933960 151.338516,509.918365 
+	C157.895065,509.913910 158.708893,509.059692 158.709946,502.332184 
+	C158.715790,465.167542 158.712738,428.002930 158.712753,390.838287 
+	C158.712753,388.934998 158.712753,387.031738 158.712753,385.367126 
+	C186.965164,385.367126 214.353149,385.367126 242.003937,385.367126 
+	C242.003937,387.628906 242.003937,389.449615 242.003937,391.270325 
+	C242.004028,428.101654 242.001709,464.932953 242.006210,501.764282 
+	C242.007126,509.320587 242.624161,509.921722 250.338348,509.923340 
+	C272.503815,509.927917 294.669250,509.927216 316.834717,509.923859 
+	C324.840240,509.922638 325.417999,509.361053 325.418427,501.489624 
+	C325.421967,435.493225 325.420563,369.496857 325.420776,302.500427 
+z"/>
+<path fill="#00E964" opacity="1.000000" stroke="none" 
+	d="
+M611.496216,509.919983 
+	C532.555298,509.929749 454.069122,509.933044 375.582947,509.931732 
+	C367.596161,509.931610 367.007782,509.348633 367.007629,501.465332 
+	C367.005249,395.983917 367.005096,290.502502 367.008270,185.021103 
+	C367.008514,177.240875 367.836273,176.389984 375.546997,176.389282 
+	C453.199982,176.382202 530.852966,176.381973 608.505920,176.389587 
+	C616.269348,176.390350 617.006836,177.156631 617.007080,185.033890 
+	C617.010132,290.681946 617.006104,396.329987 617.021912,501.978027 
+	C617.022461,505.761383 617.361450,509.641937 611.496216,509.919983 
+z"/>
+<path fill="#FDFDFD" opacity="1.000000" stroke="none" 
+	d="
+M325.420715,303.000427 
+	C325.420563,369.496857 325.421967,435.493225 325.418427,501.489624 
+	C325.417999,509.361053 324.840240,509.922638 316.834717,509.923859 
+	C294.669250,509.927216 272.503815,509.927917 250.338348,509.923340 
+	C242.624161,509.921722 242.007126,509.320587 242.006210,501.764282 
+	C242.001709,464.932953 242.004028,428.101654 242.003937,391.270325 
+	C242.003937,389.449615 242.003937,387.628906 242.003937,385.367126 
+	C214.353149,385.367126 186.965164,385.367126 158.712753,385.367126 
+	C158.712753,387.031738 158.712753,388.934998 158.712753,390.838287 
+	C158.712738,428.002930 158.715790,465.167542 158.709946,502.332184 
+	C158.708893,509.059692 157.895065,509.913910 151.338516,509.918365 
+	C128.339767,509.933960 105.341019,509.937714 82.342300,509.915131 
+	C76.351685,509.909271 75.404709,508.957123 75.404129,502.929596 
+	C75.393814,396.435425 75.393959,289.941254 75.406448,183.447067 
+	C75.407143,177.468903 76.386597,176.492386 82.394928,176.485596 
+	C105.393639,176.459564 128.392410,176.461624 151.391113,176.483337 
+	C157.865234,176.489456 158.708023,177.401230 158.709198,184.149323 
+	C158.715668,221.313950 158.712570,258.478577 158.712753,295.643219 
+	C158.712753,297.429657 158.712753,299.216095 158.712753,301.207214 
+	C186.624817,301.207214 214.029358,301.207214 242.003937,301.207214 
+	C242.003937,299.164917 242.003937,297.383209 242.003937,295.601501 
+	C242.004028,258.603516 242.001297,221.605545 242.006668,184.607574 
+	C242.007736,177.245255 242.738632,176.482895 249.897400,176.479095 
+	C272.562836,176.467056 295.228241,176.462982 317.893677,176.481827 
+	C324.450195,176.487289 325.410858,177.449020 325.413116,184.007446 
+	C325.426697,223.505112 325.420410,263.002777 325.420715,303.000427 
+z"/>
+</svg>
+      </div>
+      <div>
+        <div class="cert-issuer">HackerRank</div>
+        <div class="cert-name">Problem Solving (Intermediate) Certificate</div>
+        <div class="cert-date">March 2023</div>
+        <div class="cert-verify">View credential ↗</div>
+      </div>
+    </a>
+  </div>
+</section>
 
+<!-- CONTACT -->
+<section id="contact">
+  <div class="slabel">Get in touch</div>
+  <h2>Contact</h2>
+  <div class="contact-intro">
+    <p>Open to new opportunities, collaborations, or just a conversation about AI and ML. Feel free to reach out!</p>
+  </div>
+  <div class="cg">
+    <div class="cinfo">
+      <div class="clinks">
+        <a href="mailto:hardikparmar7@gmail.com" class="clink"><span class="ci2">✉️</span>hardikparmar7@gmail.com</a>
+        <a href="tel:+918128542910" class="clink"><span class="ci2">📞</span>+91 8128542910</a>
+        <a href="#" class="clink"><span class="ci2">📍</span>Pune, Maharashtra</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/hardikjp7" target="_blank" class="soc gh">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/hardikjp7" target="_blank" class="soc li">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://leetcode.com/hardikjp7" target="_blank" class="soc lc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+          LeetCode
+        </a>
+        <a href="https://twitter.com/hardikjp7" target="_blank" class="soc tw">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.261 5.636L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Twitter
+        </a>
+      </div>
+      <!-- <div class="vctr" id="vc" style="margin-top:20px;">👁 <span>Counting visitors…</span></div> -->
+    </div>
 
+    <form class="cform" action="https://getform.io/f/arondrvb" method="POST">
+      <div class="frow">
+        <div class="fg"><label>Full Name</label><input type="text" name="fullname" placeholder="John Doe" required/></div>
+        <div class="fg"><label>Email</label><input type="email" name="email" placeholder="john@example.com" required/></div>
+      </div>
+      <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell me about your project or opportunity…" rows="6" required></textarea></div>
+      <input type="hidden" name="_gotcha" style="display:none"/>
+      <button type="submit" class="fsub">Send Message <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+    </form>
+  </div>
+</section>
 
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+<!-- FOOTER -->
+<footer>
+  <p class="fcopy">© 2026 Hardik Parmar. All rights reserved.</p>
+  <div class="flinks">
+    <a href="#about">About</a><a href="#resume">Resume</a>
+    <a href="#projects">Projects</a><a href="#certs">Certifications</a><a href="#contact">Contact</a>
+    <a href="https://github.com/hardikjp7" target="_blank">GitHub ↗</a>
+  </div>
+</footer>
 
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+<script src="./assets/js/main.js"></script>
 </body>
-
 </html>
+
