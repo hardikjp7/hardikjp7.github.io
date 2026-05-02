@@ -2,20 +2,19 @@
    PROJECT DATA
 ══════════════════════════════════ */
 const PD = [
-  {id:1,title:"Diabetes Prediction With Deployment",cat:"end-to-end",img:"./assets/images/p1.png",link:"https://github.com/hardikjp7/Diabetes-Prediction-With-Deployment",desc:"A full end-to-end ML pipeline for diabetes prediction with live web deployment. Features data preprocessing, model training with hyperparameter tuning, and a Flask interface for real-time predictions."},
+  {id:1,title:"Applytic",cat:"cloud-native",img:"./assets/images/p13.png",link:"https://github.com/hardikjp7/applytic",desc:"A serverless, AI-driven job application tracker built on AWS that leverages real-time pattern analytics and personalized coaching to optimize your job search."},
   {id:2,title:"GeminiPro ChatBot",cat:"chatbot",img:"./assets/images/p2.png",link:"https://github.com/hardikjp7/GeminiPro-ChatBot",desc:"A conversational chatbot powered by Google's Gemini Pro LLM. Supports multi-turn dialogue with context retention and a clean, responsive web interface."},
   {id:3,title:"AI Research Assistant",cat:"chatbot",img:"./assets/images/p3.png",link:"https://github.com/hardikjp7/Ai-Research-Assistant",desc:"An agentic AI assistant that helps users discover, summarize, and synthesize research papers using LLM-powered retrieval and reasoning."},
-  {id:4,title:"ResumeMatcher ATS",cat:"chatbot",img:"./assets/images/p4.png",link:"https://github.com/hardikjp7/ResumeMatcher-ATS",desc:"An ATS clone that uses NLP to score and match resumes against job descriptions, helping candidates optimize their applications with AI-driven feedback."},
-  {id:5,title:"Movies Recommender System",cat:"end-to-end",img:"./assets/images/p5.png",link:"https://github.com/hardikjp7/Movies-Recommender-System",desc:"Content-based and collaborative filtering movie recommendation engine with a Streamlit deployment, leveraging cosine similarity on the TMDB dataset."},
-  {id:6,title:"GeminiNutri AI",cat:"gen-ai",img:"./assets/images/p6.png",link:"https://github.com/hardikjp7/GeminiNutri-AI",desc:"A generative AI nutrition advisor powered by Gemini. Analyzes food images and text inputs to provide personalized nutritional insights and meal recommendations."},
-  {id:7,title:"Fraudulent Transactions Prediction",cat:"end-to-end",img:"./assets/images/p7.png",link:"https://github.com/hardikjp7/Fraudulent-Transactions-Prediction",desc:"An end-to-end fraud detection system using ensemble ML models on highly imbalanced financial transaction data, featuring SMOTE oversampling and CI/CD deployment."},
-  {id:8,title:"Olympics Data Analysis",cat:"end-to-end",img:"./assets/images/p8.png",link:"https://github.com/hardikjp7/Olympics-Data-Analysis-with-Deployment",desc:"Comprehensive EDA of 120 years of Olympic Games data with interactive Streamlit visualizations and medal trend predictions across countries and sports."},
-  {id:9,title:"SteelPlate Multiclass EDA Modeling",cat:"end-to-end",img:"./assets/images/p9.png",link:"https://github.com/hardikjp7/SteelPlate-Multiclass-EDA-Modeling",desc:"Multiclass fault classification on the Steel Plates dataset with thorough EDA, feature engineering, and comparison of multiple ML classifiers."},
-  {id:10,title:"DeepSeek-R1: RAG for Document Q&A",cat:"gen-ai",img:"./assets/images/p10.png",link:"https://github.com/hardikjp7/DeepSeek-R1-RAG-for-Document-QA",desc:"A Retrieval-Augmented Generation pipeline using DeepSeek-R1 for intelligent document question-answering with vector embeddings and semantic search."},
-  {id:11,title:"Groq Multi Chat",cat:"chatbot",img:"./assets/images/p11.png",link:"https://github.com/hardikjp7/GroqMultiChat",desc:"A multi-model chat interface leveraging Groq's ultra-fast inference API letting users compare responses from multiple LLMs side-by-side in real time."},
-  {id:12,title:"Blog Gen LLM App",cat:"gen-ai",img:"./assets/images/p12.png",link:"https://github.com/hardikjp7/Blog-Generation-LLM-App",desc:"An LLM-powered blog generation tool that creates structured, well-formatted articles from a topic and keywords using prompt engineering and LangChain."},
+  {id:4,title:"Diabetes Prediction With Deployment",cat:"end-to-end",img:"./assets/images/p1.png",link:"https://github.com/hardikjp7/Diabetes-Prediction-With-Deployment",desc:"A full end-to-end ML pipeline for diabetes prediction with live web deployment. Features data preprocessing, model training with hyperparameter tuning, and a Flask interface for real-time predictions."},
+  {id:5,title:"ResumeMatcher ATS",cat:"chatbot",img:"./assets/images/p4.png",link:"https://github.com/hardikjp7/ResumeMatcher-ATS",desc:"An ATS clone that uses NLP to score and match resumes against job descriptions, helping candidates optimize their applications with AI-driven feedback."},
+  {id:6,title:"Movies Recommender System",cat:"end-to-end",img:"./assets/images/p5.png",link:"https://github.com/hardikjp7/Movies-Recommender-System",desc:"Content-based and collaborative filtering movie recommendation engine with a Streamlit deployment, leveraging cosine similarity on the TMDB dataset."},
+  {id:7,title:"GeminiNutri AI",cat:"gen-ai",img:"./assets/images/p6.png",link:"https://github.com/hardikjp7/GeminiNutri-AI",desc:"A generative AI nutrition advisor powered by Gemini. Analyzes food images and text inputs to provide personalized nutritional insights and meal recommendations."},
+  {id:8,title:"Fraudulent Transactions Prediction",cat:"end-to-end",img:"./assets/images/p7.png",link:"https://github.com/hardikjp7/Fraudulent-Transactions-Prediction",desc:"An end-to-end fraud detection system using ensemble ML models on highly imbalanced financial transaction data, featuring SMOTE oversampling and CI/CD deployment."},
+  {id:9,title:"DeepSeek-R1: RAG for Document Q&A",cat:"gen-ai",img:"./assets/images/p10.png",link:"https://github.com/hardikjp7/DeepSeek-R1-RAG-for-Document-QA",desc:"A Retrieval-Augmented Generation pipeline using DeepSeek-R1 for intelligent document question-answering with vector embeddings and semantic search."},
+  {id:10,title:"Groq Multi Chat",cat:"chatbot",img:"./assets/images/p11.png",link:"https://github.com/hardikjp7/GroqMultiChat",desc:"A multi-model chat interface leveraging Groq's ultra-fast inference API letting users compare responses from multiple LLMs side-by-side in real time."},
+  {id:11,title:"Blog Gen LLM App",cat:"gen-ai",img:"./assets/images/p12.png",link:"https://github.com/hardikjp7/Blog-Generation-LLM-App",desc:"An LLM-powered blog generation tool that creates structured, well-formatted articles from a topic and keywords using prompt engineering and LangChain."},
 ];
-const CL = {"end-to-end":"End-to-End","gen-ai":"Gen AI","chatbot":"Chatbot / Agents"};
+const CL = {"end-to-end":"End-to-End","gen-ai":"Gen AI","chatbot":"Chatbot / Agents","cloud-native":"Cloud Native"};
 
 /* ══════════════════════════════════
    FADE-IN OBSERVER
@@ -182,7 +181,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeM(); })
 /* ══════════════════════════════════
    TYPED ANIMATION
 ══════════════════════════════════ */
-const phrases = ["AI / ML Engineer", "Data Scientist", "Generative AI Builder", "MLOps Enthusiast"];
+const phrases = ["AI / ML Engineer", "Cloud ML Engineer", "Generative AI Builder", "MLOps Enthusiast"];
 let pi = 0, ci = 0, del = false;
 const tw = document.getElementById('tw');
 function type() {
