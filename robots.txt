@@ -1,0 +1,12 @@
+# robots.txt — hardikjp7.com
+# https://hardikjp7.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Point all crawlers to the sitemap
+Sitemap: https://hardikjp7.com/sitemap.xml
+
+# Block crawlers from non-content assets
+Disallow: /assets/css/
+Disallow: /assets/js/
