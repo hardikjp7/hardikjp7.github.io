@@ -5,12 +5,11 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- ═══════════════════════════════════════
-       ROOT / HOMEPAGE
-       Priority 1.0 — canonical entry point
+       HOMEPAGE — only real crawlable URL
   ════════════════════════════════════════ -->
   <url>
     <loc>https://hardikjp7.com/</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://hardikjp7.com/"/>
@@ -19,58 +18,25 @@
       <image:title>Hardik Parmar — AI/ML Engineer Portfolio</image:title>
       <image:caption>Portfolio of Hardik Parmar (hardikjp7), AI/ML Engineer at TCS specializing in RAG pipelines, LLM applications, and serverless AWS architecture.</image:caption>
     </image:image>
-    <image:image>
-      <image:loc>https://hardikjp7.com/assets/images/me.png</image:loc>
-      <image:title>Hardik Parmar — Profile Photo</image:title>
-    </image:image>
+    <image:loc>https://hardikjp7.com/assets/images/me.png</image:loc>
   </url>
 
   <!-- ═══════════════════════════════════════
-       SECTION ANCHORS
-       Helps Google understand page structure
-       and may generate sitelinks in SERP
+       APPLYTIC — deployed project page
   ════════════════════════════════════════ -->
   <url>
-    <loc>https://hardikjp7.com/#about</loc>
-    <lastmod>2026-05-17</lastmod>
+    <loc>https://hardikjp7.com/applytic/</loc>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://hardikjp7.com/#resume</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://hardikjp7.com/#projects</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://hardikjp7.com/#certs</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://hardikjp7.com/#contact</loc>
-    <lastmod>2026-05-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
   </url>
 
   <!-- ═══════════════════════════════════════
-       RESUME PDF  — crawlable asset
+       RESUME PDF — crawlable asset
   ════════════════════════════════════════ -->
   <url>
     <loc>https://hardikjp7.com/assets/images/Hardik_Parmar_Resume.pdf</loc>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
