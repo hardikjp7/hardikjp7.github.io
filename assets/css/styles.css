@@ -107,6 +107,7 @@ h2{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:
 .svc:hover::before{opacity:1;}
 .svc-ico{width:38px;height:38px;border-radius:9px;background:rgba(127,255,110,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:1.05rem;}
 .svc h4{font-family:'Syne',sans-serif;font-size:.86rem;font-weight:700;margin-bottom:5px;}
+.svc h3{font-family:'Syne',sans-serif;font-size:.86rem;font-weight:700;margin-bottom:5px;}
 .svc p{font-size:.76rem;color:var(--muted);line-height:1.6;}
 
 /* ═══ RESUME ═══ */
@@ -211,6 +212,7 @@ h2{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,4vw,2.8rem);font-weight:
 .soc.li:hover{border-color:#0a66c2;color:#0a66c2;}
 .soc.lc:hover{border-color:#ffa116;color:#ffa116;}
 .soc.tw:hover{border-color:#1d9bf0;color:#1d9bf0;}
+.soc.md:hover{border-color:#00ab6c;color:#00ab6c;}
 
 /* Certifications */
 #certs{padding:96px 60px;max-width:1200px;margin:0 auto;}
