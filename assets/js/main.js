@@ -4,6 +4,7 @@
 const PD = [
   {id:1, title:"Applytic",                      cat:"cloud-native", thumb:"./assets/images/p13-thumb.webp", img:"./assets/images/p13-modal.webp", link:"https://github.com/hardikjp7/applytic",                       desc:"A serverless, AI-driven job application tracker built on AWS that leverages real-time pattern analytics and personalized coaching to optimize your job search."},
   {id:2, title:"Auditiq",                        cat:"gen-ai",       thumb:"./assets/images/p14-thumb.webp", img:"./assets/images/p14-modal.webp", link:"https://github.com/hardikjp7/auditiq",                        desc:"An AI-powered compliance audit validator using RAG pipelines and LLMs on AMD ROCm. Automates document-level compliance checks with semantic search and intelligent reasoning over audit standards."},
+  {id:13,title:"DevMesh",                        cat:"gen-ai",       thumb:"./assets/images/p15-thumb.webp", img:"./assets/images/p15-modal.webp", link:"https://github.com/hardikjp7/DevMesh",                        desc:"An on-device AI code reviewer running entirely on a Snapdragon NPU. Reviews git commits and PRs offline, streams findings to a mobile triage app, and generates a local PDF report with zero cloud calls."},
   {id:3, title:"GeminiPro ChatBot",              cat:"chatbot",      thumb:"./assets/images/p2-thumb.webp",  img:"./assets/images/p2-modal.webp",  link:"https://github.com/hardikjp7/GeminiPro-ChatBot",             desc:"A conversational chatbot powered by Google's Gemini Pro LLM. Supports multi-turn dialogue with context retention and a clean, responsive web interface."},
   {id:4, title:"AI Research Assistant",          cat:"chatbot",      thumb:"./assets/images/p3-thumb.webp",  img:"./assets/images/p3-modal.webp",  link:"https://github.com/hardikjp7/Ai-Research-Assistant",         desc:"An agentic AI assistant that helps users discover, summarize, and synthesize research papers using LLM-powered retrieval and reasoning."},
   {id:5, title:"Diabetes Prediction",            cat:"end-to-end",   thumb:"./assets/images/p1-thumb.webp",  img:"./assets/images/p1-modal.webp",  link:"https://github.com/hardikjp7/Diabetes-Prediction-With-Deployment", desc:"A full end-to-end ML pipeline for diabetes prediction with live web deployment. Features data preprocessing, model training with hyperparameter tuning, and a Flask interface for real-time predictions."},
@@ -13,7 +14,6 @@ const PD = [
   {id:9, title:"Fraudulent Transactions",        cat:"end-to-end",   thumb:"./assets/images/p7-thumb.webp",  img:"./assets/images/p7-modal.webp",  link:"https://github.com/hardikjp7/Fraudulent-Transactions-Prediction", desc:"An end-to-end fraud detection system using ensemble ML models on highly imbalanced financial transaction data, featuring SMOTE oversampling and CI/CD deployment."},
   {id:10,title:"DeepSeek-R1: RAG for Doc Q&A",  cat:"gen-ai",       thumb:"./assets/images/p10-thumb.webp", img:"./assets/images/p10-modal.webp", link:"https://github.com/hardikjp7/DeepSeek-R1-RAG-for-Document-QA", desc:"A Retrieval-Augmented Generation pipeline using DeepSeek-R1 for intelligent document question-answering with vector embeddings and semantic search."},
   {id:11,title:"Groq Multi Chat",                cat:"chatbot",      thumb:"./assets/images/p11-thumb.webp", img:"./assets/images/p11-modal.webp", link:"https://github.com/hardikjp7/GroqMultiChat",                 desc:"A multi-model chat interface leveraging Groq's ultra-fast inference API letting users compare responses from multiple LLMs side-by-side in real time."},
-  {id:12,title:"Blog Gen LLM App",               cat:"gen-ai",       thumb:"./assets/images/p12-thumb.webp", img:"./assets/images/p12-modal.webp", link:"https://github.com/hardikjp7/Blog-Generation-LLM-App",       desc:"An LLM-powered blog generation tool that creates structured, well-formatted articles from a topic and keywords using prompt engineering and LangChain."},
 ];
 const CL = {"end-to-end":"End-to-End","gen-ai":"Gen AI","chatbot":"Chatbot / Agents","cloud-native":"Cloud Native"};
 
@@ -82,10 +82,15 @@ async function fetchCommitCount(link) {
 /* ══════════════════════════════════
    RENDER PROJECT CARDS
 ══════════════════════════════════ */
+const PREVIEW_COUNT = 6;
+let projectsExpanded = false;
+
 function renderP(filter) {
   const grid = document.getElementById('pg');
   grid.innerHTML = '';
-  const list = filter === 'all' ? PD : PD.filter(p => p.cat === filter);
+  const fullList = filter === 'all' ? PD : PD.filter(p => p.cat === filter);
+  const capApplies = filter === 'all' && fullList.length > PREVIEW_COUNT;
+  const list = capApplies && !projectsExpanded ? fullList.slice(0, PREVIEW_COUNT) : fullList;
 
   list.forEach(p => {
     const c = document.createElement('div');
@@ -115,7 +120,26 @@ function renderP(filter) {
       if (data) p.stars = data.stars;
     });
   });
+
+  const wrap = document.getElementById('pmw');
+  const label = document.getElementById('pmb-label');
+  const btn = document.getElementById('pmb');
+  if (capApplies) {
+    wrap.style.display = 'flex';
+    label.textContent = projectsExpanded ? 'Show Less' : 'Show All Projects';
+    btn.classList.toggle('expanded', projectsExpanded);
+  } else {
+    wrap.style.display = 'none';
+  }
 }
+
+document.getElementById('pmb').addEventListener('click', () => {
+  projectsExpanded = !projectsExpanded;
+  renderP('all');
+  if (!projectsExpanded) {
+    document.getElementById('projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+});
 
 /* ══════════════════════════════════
    FILTER BUTTONS
@@ -125,6 +149,7 @@ document.getElementById('fb').addEventListener('click', e => {
   if (!b) return;
   document.querySelectorAll('.fbtn').forEach(x => x.classList.remove('active'));
   b.classList.add('active');
+  if (b.dataset.f === 'all') projectsExpanded = false;
   renderP(b.dataset.f);
 });
 renderP('all');
@@ -232,10 +257,26 @@ aniPts();
    CURSOR GLOW
 ══════════════════════════════════ */
 const cgEl = document.getElementById('cg');
+let cgTX = window.innerWidth / 2, cgTY = window.innerHeight / 2;
+let cgX = cgTX, cgY = cgTY;
+let cgActive = false;
 document.addEventListener('mousemove', e => {
-  cgEl.style.left = e.clientX + 'px';
-  cgEl.style.top = e.clientY + 'px';
-});
+  cgTX = e.clientX;
+  cgTY = e.clientY;
+  cgActive = true;
+}, { passive: true });
+
+function aniCg() {
+  // Ease toward the real cursor position each frame instead of animating
+  // the CSS left/top properties (which forces layout on every mousemove).
+  cgX += (cgTX - cgX) * 0.35;
+  cgY += (cgTY - cgY) * 0.35;
+  if (cgActive) {
+    cgEl.style.transform = `translate3d(${cgX}px, ${cgY}px, 0) translate(-50%, -50%)`;
+  }
+  requestAnimationFrame(aniCg);
+}
+aniCg();
 
 /* ══════════════════════════════════
    SCROLL PROGRESS BAR
@@ -254,22 +295,45 @@ window.addEventListener('scroll', () => btt.classList.toggle('vis', window.scrol
 /* ══════════════════════════════════
    ACTIVE NAV LINK
 ══════════════════════════════════ */
-const secs = document.querySelectorAll('[id]'), nas = document.querySelectorAll('.nav-links a');
+const nas = document.querySelectorAll('.nav-links a');
+const secs = Array.from(nas)
+  .map(a => document.getElementById(a.getAttribute('href').slice(1)))
+  .filter(Boolean);
 
-// Cache offsets to avoid forced reflow on every scroll event
-let secOffsets = [];
-function cacheSectionOffsets() {
-  secOffsets = Array.from(secs).map(s => ({ id: s.id, top: s.offsetTop }));
+const navLinkByHash = new Map();
+nas.forEach(a => navLinkByHash.set(a.getAttribute('href'), a));
+
+// Tracks which observed sections are currently inside the "active band"
+// (a thin horizontal strip near the top of the viewport). Using
+// IntersectionObserver means this stays correct even when a section's
+// height changes later (e.g. async GitHub stats expanding the resume
+// section) — unlike a cached offsetTop snapshot, which goes stale the
+// moment content above the current scroll position resizes.
+const visibleSections = new Set();
+
+function updateActiveNav() {
+  if (!visibleSections.size) return;
+  // Among sections currently in the active band, pick the one furthest
+  // down the page (the one most recently scrolled into), matching
+  // standard scrollspy behavior.
+  let top = null;
+  secs.forEach(s => {
+    if (visibleSections.has(s.id) && (!top || s.offsetTop > top.offsetTop)) top = s;
+  });
+  if (!top) return;
+  const link = navLinkByHash.get('#' + top.id);
+  nas.forEach(a => a.classList.toggle('active', a === link));
 }
-cacheSectionOffsets();
-window.addEventListener('resize', cacheSectionOffsets);
 
-window.addEventListener('scroll', () => {
-  let cur = '';
-  const scrollY = window.scrollY;
-  secOffsets.forEach(s => { if (scrollY >= s.top - 140) cur = s.id; });
-  nas.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
-});
+const navObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) visibleSections.add(entry.target.id);
+    else visibleSections.delete(entry.target.id);
+  });
+  updateActiveNav();
+}, { rootMargin: '-140px 0px -65% 0px', threshold: 0 });
+
+secs.forEach(s => navObserver.observe(s));
 
 /* ══════════════════════════════════
    HAMBURGER MENU
