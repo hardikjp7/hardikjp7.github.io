@@ -48,7 +48,7 @@ function repoName(link) {
   return match ? match[1] : null;
 }
 
-// Fetch repo details — returns { stars } or null on failure
+// Fetch repo details - returns { stars } or null on failure
 async function fetchRepoData(link) {
   const repo = repoName(link);
   if (!repo) return null;
@@ -65,17 +65,17 @@ async function fetchRepoData(link) {
   }
 }
 
-// Fetch commit count via commits endpoint — returns length of array
+// Fetch commit count via commits endpoint - returns length of array
 async function fetchCommitCount(link) {
   const repo = repoName(link);
-  if (!repo) return '—';
+  if (!repo) return '-';
   try {
     const r = await fetch(`https://api.github.com/repos/${repo}/commits?sha=main&per_page=100`);
     if (!r.ok) throw new Error('not ok');
     const d = await r.json();
-    return Array.isArray(d) ? d.length : '—';
+    return Array.isArray(d) ? d.length : '-';
   } catch {
-    return '—';
+    return '-';
   }
 }
 
@@ -155,7 +155,7 @@ document.getElementById('fb').addEventListener('click', e => {
 renderP('all');
 
 /* ══════════════════════════════════
-   MODAL — open / close
+   MODAL - open / close
 ══════════════════════════════════ */
 function openM(p) {
   const mi = document.getElementById('mi');
@@ -175,7 +175,7 @@ function openM(p) {
   } else {
     mstarsEl.textContent = '…';
     fetchRepoData(p.link).then(data => {
-      mstarsEl.textContent = data ? data.stars : '—';
+      mstarsEl.textContent = data ? data.stars : '-';
       if (data) p.stars = data.stars;
     });
   }
@@ -307,7 +307,7 @@ nas.forEach(a => navLinkByHash.set(a.getAttribute('href'), a));
 // (a thin horizontal strip near the top of the viewport). Using
 // IntersectionObserver means this stays correct even when a section's
 // height changes later (e.g. async GitHub stats expanding the resume
-// section) — unlike a cached offsetTop snapshot, which goes stale the
+// section) - unlike a cached offsetTop snapshot, which goes stale the
 // moment content above the current scroll position resizes.
 const visibleSections = new Set();
 
@@ -389,4 +389,4 @@ async function ghStats() {
     g.innerHTML = `<div class="gh-msg"><a href="https://github.com/hardikjp7" target="_blank" style="color:var(--accent)">View GitHub Profile ↗</a></div>`;
   }
 }
-ghStats(); // ← was missing () in original — this was the bug causing stats not to load
+ghStats(); // ← was missing () in original - this was the bug causing stats not to load

@@ -5,7 +5,7 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- ═══════════════════════════════════════
-       HOMEPAGE — only real crawlable URL
+       HOMEPAGE - only real crawlable URL
   ════════════════════════════════════════ -->
   <url>
     <loc>https://hardikjp7.com/</loc>
@@ -15,14 +15,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://hardikjp7.com/"/>
     <image:image>
       <image:loc>https://hardikjp7.com/og-image.png</image:loc>
-      <image:title>Hardik Parmar — AI/ML Engineer Portfolio</image:title>
+      <image:title>Hardik Parmar - AI/ML Engineer Portfolio</image:title>
       <image:caption>Portfolio of Hardik Parmar (hardikjp7), AI/ML Engineer at TCS specializing in RAG pipelines, LLM applications, and serverless AWS architecture.</image:caption>
     </image:image>
     <image:loc>https://hardikjp7.com/assets/images/me.png</image:loc>
   </url>
 
   <!-- ═══════════════════════════════════════
-       APPLYTIC — deployed project page
+       APPLYTIC - deployed project page
   ════════════════════════════════════════ -->
   <url>
     <loc>https://hardikjp7.com/applytic/</loc>
@@ -32,7 +32,7 @@
   </url>
 
   <!-- ═══════════════════════════════════════
-       AUDITIQ — deployed project page
+       AUDITIQ - deployed project page
   ════════════════════════════════════════ -->
   <url>
     <loc>https://hardikjp7.com/auditiq/</loc>
@@ -42,7 +42,7 @@
   </url>
 
   <!-- ═══════════════════════════════════════
-       RESUME PDF — crawlable asset
+       RESUME PDF - crawlable asset
   ════════════════════════════════════════ -->
   <url>
     <loc>https://hardikjp7.com/assets/images/Hardik_Parmar_Resume.pdf</loc>

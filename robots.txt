@@ -1,4 +1,4 @@
-# robots.txt — hardikjp7.com
+# robots.txt - hardikjp7.com
 # https://hardikjp7.com/robots.txt
 
 User-agent: *
