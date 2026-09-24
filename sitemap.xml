@@ -41,14 +41,5 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- ═══════════════════════════════════════
-       RESUME PDF - crawlable asset
-  ════════════════════════════════════════ -->
-  <url>
-    <loc>https://hardikjp7.com/assets/images/Hardik_Parmar_Resume.pdf</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
 
 </urlset>
